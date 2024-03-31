@@ -1,0 +1,94 @@
+---
+title: Test text 5?
+description: lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+date: "2023-06-05"
+previewImage: https://images.unsplash.com/photo-1614150798521-2d3cdae89684?q=80&w=2290&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+tags:
+  - design
+  - web
+  - animations
+  - course
+  - platform
+---
+# {% $markdoc.frontmatter.title %} {% .overview %}
+
+{% heading
+    level="6"
+    weight="light"
+%}
+  Title 5
+{% /heading %}
+{% heading
+    level="6"
+    weight="medium"
+    opacity="0.7"
+    marginBottom="50px"
+%}
+   Subtitle 5
+{% /heading %}
+
+I recently launched the early version of [Animations on the web](https://google.com), a course about web
+animations. I thought it could be interesting to write about how I built the platform for
+it, talk about the design process, tech stack, and more.
+
+
+{% heading  level="6" marginTop="32px" marginBottom="16px"%}
+Why a custom platform?
+{% /heading %}
+
+I want to build things that I can be proud of. While there are a few course creation platforms out there, I wanted something that feels like me and something that I can customize to my needs, so that the students can get the best experience possible.
+
+
+{% heading  level="6" marginTop="32px" marginBottom="16px" %}
+Why a custom platform?
+{% /heading %}
+
+Most of the things I build are monochrome, but given that this is my first paid product, I wanted to give it more personality. People often call good animations 'buttery smooth,' so I thought it would be a good idea to use a buttery yellow as the accent color. Based on that, we also worked on a melting butter logo with [Nev Flynn](https://google.com).
+
+{%spacing size="32px"/ %}
+
+![alt text](https://emilkowal.ski/_next/image?url=%2Fcourse-post%2Flesson.png&w=1920&q=75)
+
+{%spacing size="48px" %} {%/spacing%}
+
+I'm a big fan of courses myself. I already knew that I wanted my platform to look like a mix of Josh Comeau's courses and Sam Selikoff's buildui.com. Mariana helped me design the course, it wouldn't have looked the same without her help.
+{%spacing/ %}
+We've chosen Inter as the sans font as it's readable. The mono font is called Commit Mono; I absolutely love it. I'm using it for this site and in VSCode as well.
+{%spacing%} {%/spacing%}
+Each lesson features a video on top, followed by a text version of the video with interactive components and additional explanations. The navigation is right next to the text; it's sticky, enabling users to easily jump to the next lesson
+
+
+{% heading  level="6" marginTop="32px" marginBottom="16px"%}
+Authentication
+{% /heading %}
+
+Users can log in using a magic link. I use [lemonsqueezy](https://google.com) for payments. Their API lets me check whether the entered email is a paying customer.
+
+```
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const email = searchParams.get("email");
+
+  const res = await fetch(
+    `https://api.lemonsqueezy.com/v1/customers?filter[email]=${email}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.LEMON_SQUEEZY_KEY}`,
+        Accept: "application/json",
+      },
+    }
+  );
+
+  const { data: foundCustomers } = await res.json();
+
+  // ...
+}
+```
+
+{%spacing size="48px" /%}
+
+I wanted to keep this platform very simple and limit the number of external dependencies, so I went with the most basic MDX setup possible, which is described here.
+{%spacing%} {%/spacing%}
+
+You can see how I structure my files below.
+
