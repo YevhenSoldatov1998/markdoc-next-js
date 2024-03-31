@@ -7,6 +7,7 @@ import {unstable_setRequestLocale} from "next-intl/server";
 import {NextIntlClientProvider, useMessages} from "next-intl";
 import Header from "@/components/header";
 import React from "react";
+import {locales} from "@/lib/navigation";
 
 
 export const metadata = {
@@ -15,7 +16,6 @@ export const metadata = {
 };
 
 
-const locales = ['en', 'ru'];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({locale}));

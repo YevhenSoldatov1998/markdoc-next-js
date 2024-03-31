@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url><loc>http://localhost:3000/en/</loc></url>
+      <url><loc>http://localhost:3000/en/about/</loc></url>
+      <url><loc>http://localhost:3000/ru/</loc></url>
+      <url><loc>http://localhost:3000/ru/about/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-9/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-8/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-7/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-6/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-5/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-4/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-3/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-2/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-10/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/test-1/</loc></url>
+      <url><loc>http://localhost:3000/en/blog/first-post/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-9/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-8/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-7/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-6/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-5/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-4/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-3/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-2/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-10/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/test-1/</loc></url>
+      <url><loc>http://localhost:3000/ru/blog/first-post/</loc></url>
+    </urlset>
