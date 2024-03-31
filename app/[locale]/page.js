@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import fs from "fs/promises";
 import path from "path";
-import {getTranslations} from "next-intl/server";
+import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import matter from "gray-matter";
 import PageNavigation from "@/components/page-navigation";
 import {Separator} from "@/components/ui/separator";
@@ -47,6 +47,8 @@ const getPosts = async ({page, locale}) => {
   return {posts: postsPerPage, countOfPages};
 }
 const Page = async (props) => {
+  unstable_setRequestLocale(props.params.locale);
+
   const currentPage = Number(props.searchParams.page || 1)
   const {params} = props
   const {posts, countOfPages} = await getPosts({locale: props.params.locale, page: currentPage})

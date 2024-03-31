@@ -1,10 +1,11 @@
-import React, {FC} from 'react';
+import React from 'react';
 import slugConfig from "@/lib/slugConfig";
 import path from "path";
 import fs from "fs/promises";
 import Markdoc from "@markdoc/markdoc";
 import config from "@/lib/mdoc";
 import {notFound} from "next/navigation";
+import {unstable_setRequestLocale} from "next-intl/server";
 
 
 async function getMarkdown({params}) {

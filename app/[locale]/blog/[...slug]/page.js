@@ -1,12 +1,11 @@
 import path from 'path';
-import React, {FC} from 'react';
+import React from 'react';
 import fs from 'fs/promises';
 import Markdoc from "@markdoc/markdoc";
 import slugConfig from "@/lib/slugConfig";
 import config from "@/lib/mdoc";
 import {notFound} from "next/navigation";
 import '@/public/assets/styles/highlights.css'
-
 
 
 async function getMarkdown({params}) {
@@ -25,6 +24,7 @@ async function getMarkdown({params}) {
 }
 
 const Blog = async (props) => {
+
   const {result} = await getMarkdown(props)
 
   return (

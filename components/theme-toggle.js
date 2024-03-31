@@ -5,17 +5,10 @@ import {MoonIcon, SunIcon} from "@radix-ui/react-icons"
 import {useTheme} from "next-themes"
 
 import {Button} from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {useTranslations} from "next-intl";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from "@/components/ui/dropdown-menu"
 
-export function ThemeToggle() {
+export function ThemeToggle({t}) {
   const {setTheme} = useTheme()
-  const t = useTranslations();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
